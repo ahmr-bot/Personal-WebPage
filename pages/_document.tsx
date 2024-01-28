@@ -1,13 +1,16 @@
-import * as React from 'react';
-import { Html, Head, Main, NextScript, DocumentProps, DocumentContext } from 'next/document';
+import { useMediaQuery } from '@mui/material';
 import {
   DocumentHeadTags,
   DocumentHeadTagsProps,
   documentGetInitialProps,
 } from '@mui/material-nextjs/v14-pagesRouter';
-import theme, { roboto } from '../src/theme';
+import { DocumentContext, DocumentProps, Head, Html, Main, NextScript } from 'next/document';
+import { darkTheme, lightTheme, roboto } from '../src/theme';
+
 
 export default function MyDocument(props: DocumentProps & DocumentHeadTagsProps) {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = prefersDarkMode ? darkTheme : lightTheme
   return (
     <Html lang="en" className={roboto.className}>
       <Head>
