@@ -12,7 +12,7 @@ export default function MyDocument(props: DocumentProps & DocumentHeadTagsProps)
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = prefersDarkMode ? darkTheme : lightTheme
   return (
-    <Html lang="en" className={roboto.className}>
+    <Html lang="zh-CN" className={roboto.className}>
       <Head>
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
